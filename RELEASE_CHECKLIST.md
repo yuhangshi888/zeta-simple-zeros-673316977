@@ -22,7 +22,7 @@ commit.  The later sections track publication and independent follow-up.
       boundary, and one-command check visible above the README fold.
 - [x] Create an immutable tag `v0.1.0` and a GitHub Release named
       `67.3316977142% research-draft candidate`; attach `main.pdf` if desired.
-- [ ] Record the release commit SHA in any announcement.
+- [x] Record the release commit SHA in the public README.
 - [x] Archive the tagged release with Zenodo or another permanent repository,
       then add the DOI to `CITATION.cff` and the README.
 

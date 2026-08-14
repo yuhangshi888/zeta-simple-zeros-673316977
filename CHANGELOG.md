@@ -13,6 +13,8 @@
   repository code remains under the root MIT license.
 - Added a structured GitHub Issue form for independent mathematical and
   reproducibility reports, with explicit scope and trust-boundary fields.
+- Recorded the immutable `v0.1.0` commit SHA beside the permanent DOI in the
+  public README.
 
 ## v0.1.0 - 2026-08-14
 

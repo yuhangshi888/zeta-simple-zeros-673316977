@@ -25,6 +25,10 @@ at commit `1610b97b7895ff34982260f8dcaf04a0f7b82cf7`.
 **[Exact result](RESULT.json)** · **[Independent review guide](REVIEW_GUIDE.md)** ·
 **[Submit a verification report](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/issues/new?template=verification-report.yml)**
 
+Version record: `v0.1.0` is fixed at commit
+[`1469eeefe29c48c971ecf98092bc82751dea8bca`](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/commit/1469eeefe29c48c971ecf98092bc82751dea8bca)
+and permanently archived as [Zenodo DOI 10.5281/zenodo.21926962](https://doi.org/10.5281/zenodo.21926962).
+
 The value is `67.3316977142471...%`, compared with the pinned upstream
 candidate `67.3312742272246...%`; the numerical gain is about
 `0.000423487` percentage points. This is a comparison of stated candidates,

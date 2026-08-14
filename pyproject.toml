@@ -17,4 +17,5 @@ keywords = [
 
 [project.urls]
 Repository = "https://github.com/yuhangshi888/zeta-simple-zeros-673316977"
-Paper = "https://github.com/yuhangshi888/zeta-simple-zeros-673316977/blob/main/main.pdf"
+Paper = "https://doi.org/10.5281/zenodo.21926962"
+Release = "https://github.com/yuhangshi888/zeta-simple-zeros-673316977/releases/tag/v0.1.0"

@@ -6,6 +6,13 @@
 - Added the author's verified ORCID to the citation metadata.
 - Added verification, release, and ORCID badges plus GitHub social-preview
   artwork.  No mathematical statement or numerical value was changed.
+- Added the verified Zenodo version DOI `10.5281/zenodo.21926962` to the
+  citation metadata, README, project metadata, provenance, and machine-readable
+  result.  The archived files match the prepared `v0.1.0` deposit byte for byte.
+- Aligned the article-level CFF license with the Zenodo CC BY 4.0 record; the
+  repository code remains under the root MIT license.
+- Added a structured GitHub Issue form for independent mathematical and
+  reproducibility reports, with explicit scope and trust-boundary fields.
 
 ## v0.1.0 - 2026-08-14
 

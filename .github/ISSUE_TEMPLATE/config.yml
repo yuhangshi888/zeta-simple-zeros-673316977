@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Independent review guide
+    url: https://github.com/yuhangshi888/zeta-simple-zeros-673316977/blob/main/REVIEW_GUIDE.md
+    about: Read the short list of load-bearing checks before submitting a report.
+  - name: Permanent Zenodo archive
+    url: https://doi.org/10.5281/zenodo.21926962
+    about: Use the immutable v0.1.0 paper and source archive for version-specific review.

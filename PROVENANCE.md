@@ -16,6 +16,13 @@ deduction.  The new material consists of:
 No floating-point optimization, new gap weights, new window, or new large
 interval run is used in this deduction.
 
+The immutable `v0.1.0` release is permanently archived at
+[Zenodo](https://doi.org/10.5281/zenodo.21926962), version DOI
+`10.5281/zenodo.21926962`, from Git commit
+`1469eeefe29c48c971ecf98092bc82751dea8bca`.  The deposited PDF, source ZIP,
+and checksum file were checked byte for byte against the prepared release
+package.
+
 A second zero-trust pass checked the two upstream candidate files directly:
 their window coefficient vectors agree, all listed pair weights are
 nonnegative, and the span capacities are exactly `2`. The published logs

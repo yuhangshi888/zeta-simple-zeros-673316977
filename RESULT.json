@@ -4,6 +4,13 @@
   "title": "A two-certificate trace-energy deduction for simple zeros of the Riemann zeta function",
   "author": "Yuhang Shi",
   "date": "2026-08-14",
+  "publication": {
+    "platform": "Zenodo",
+    "version": "0.1.0",
+    "version_doi": "10.5281/zenodo.21926962",
+    "concept_doi": "10.5281/zenodo.21926961",
+    "url": "https://doi.org/10.5281/zenodo.21926962"
+  },
   "quantity": "liminf_{T->infinity} N_0^s(T,2T) / N(T,2T)",
   "candidate_lower_bound_decimal": "0.673316977142471313480285307148899888",
   "candidate_lower_bound_percent": "67.3316977142471313480285307148899888",

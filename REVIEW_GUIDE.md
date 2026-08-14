@@ -1,5 +1,9 @@
 # Independent review guide
 
+Reports may be submitted through the structured
+[verification-report form](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/issues/new?template=verification-report.yml).
+Corrections and negative findings are as useful as confirmations.
+
 The fastest useful review is to check the following points in order.
 
 1. **Imported data.** At upstream commit

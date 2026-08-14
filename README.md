@@ -1,6 +1,7 @@
 # Two-certificate trace--energy deduction
 
 [![Verification](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/actions/workflows/verify.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21926962.svg)](https://doi.org/10.5281/zenodo.21926962)
 [![Release](https://img.shields.io/github/v/release/yuhangshi888/zeta-simple-zeros-673316977?label=release)](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/releases/tag/v0.1.0)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0006--3180--4767-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-3180-4767)
 
@@ -19,8 +20,10 @@ window and both local inequalities from
 [`trmdy/zeta-simple-zeros-673137`](https://github.com/trmdy/zeta-simple-zeros-673137)
 at commit `1610b97b7895ff34982260f8dcaf04a0f7b82cf7`.
 
-**[Paper](main.pdf)** · **[Proof outline](PROOF_OUTLINE.md)** ·
-**[Exact result](RESULT.json)** · **[Independent review guide](REVIEW_GUIDE.md)**
+**[Paper](main.pdf)** · **[Permanent archive](https://doi.org/10.5281/zenodo.21926962)** ·
+**[Proof outline](PROOF_OUTLINE.md)** ·
+**[Exact result](RESULT.json)** · **[Independent review guide](REVIEW_GUIDE.md)** ·
+**[Submit a verification report](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/issues/new?template=verification-report.yml)**
 
 The value is `67.3316977142471...%`, compared with the pinned upstream
 candidate `67.3312742272246...%`; the numerical gain is about
@@ -85,6 +88,28 @@ does not duplicate its large verification code or claim an independent
 replay.  The public status should remain **research-draft candidate** until
 the imported analytic interface and certificate have received independent
 review.
+
+## Citation
+
+Shi, Y. (2026). *A two-certificate trace-energy deduction for simple zeros
+of the Riemann zeta function* (Version 0.1.0). Zenodo.
+[https://doi.org/10.5281/zenodo.21926962](https://doi.org/10.5281/zenodo.21926962)
+
+The archived manuscript is available under CC BY 4.0.  The repository code
+remains available under the MIT license in `LICENSE`.
+
+```bibtex
+@misc{Shi2026TwoCertificate,
+  author    = {Yuhang Shi},
+  title     = {A two-certificate trace-energy deduction for simple zeros of
+               the Riemann zeta function},
+  year      = {2026},
+  version   = {0.1.0},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.21926962},
+  url       = {https://doi.org/10.5281/zenodo.21926962}
+}
+```
 
 The earlier paper [*A Schur--Jensen Gain in the Critical-Line Zero
 Problem*](https://doi.org/10.5281/zenodo.21903013) is not combined additively

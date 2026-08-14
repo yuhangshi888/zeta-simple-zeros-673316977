@@ -38,6 +38,10 @@ replace either upstream interval certificate.
 The source is `main.tex`; a standard LaTeX installation or Tectonic can
 compile it.  The checked PDF is committed as `main.pdf`.
 
+The immutable `v0.1.0` paper and source package are also archived under
+[Zenodo DOI 10.5281/zenodo.21926962](https://doi.org/10.5281/zenodo.21926962).
+The Zenodo file checksums were compared with the local deposit package.
+
 ## Imported certificate audit
 
 To replay the finite certificates themselves, check out exactly

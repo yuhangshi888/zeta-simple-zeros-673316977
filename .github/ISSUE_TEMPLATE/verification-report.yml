@@ -1,0 +1,70 @@
+name: Independent verification report
+description: Report a focused mathematical or reproducibility check of the research draft.
+title: "[Verification] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for checking this research draft. Please separate findings about
+        the new local deduction from findings about imported analytic or computational
+        inputs. No endorsement is expected.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit checked
+      description: Give the Git tag, DOI, or full Git commit SHA used for the check.
+      placeholder: "v0.1.0 / 10.5281/zenodo.21926962 / 1469ee..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Primary scope of this report
+      options:
+        - New finite-dimensional deduction
+        - Imported certificate compatibility
+        - Imported analytic interface
+        - Exact arithmetic and repository verification
+        - Several of the above
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks performed
+      description: Select every item actually checked.
+      options:
+        - label: Scaled-pressure lemma and eigenvalue case split
+        - label: Two-certificate supporting-plane lemma and affine breakpoints
+        - label: Coefficientwise inequality W_6 >= 3 W_8/4 and block endpoints
+        - label: Shifted-block counting, uniformity, and endpoint error terms
+        - label: Exact final comparison via `python3 verify_release.py`
+        - label: Same-window and Git-blob compatibility of the pinned upstream inputs
+        - label: Independent replay of one or both large upstream interval certificates
+
+  - type: textarea
+    id: findings
+    attributes:
+      label: Findings
+      description: State what was verified, what remains unchecked, and any error or concern found.
+      placeholder: "Please include precise lemma, equation, file, or line references where possible."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction details
+      description: Record commands, software versions, logs, or links needed to reproduce the check.
+      placeholder: "Environment, commands, output hashes, and links"
+
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: Reporting boundary
+      options:
+        - label: I have distinguished proved local statements, imported inputs, and items I did not check.
+          required: true

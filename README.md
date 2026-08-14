@@ -1,5 +1,9 @@
 # Two-certificate trace--energy deduction
 
+[![Verification](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/actions/workflows/verify.yml/badge.svg?branch=main)](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/actions/workflows/verify.yml)
+[![Release](https://img.shields.io/github/v/release/yuhangshi888/zeta-simple-zeros-673316977?label=release)](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/releases/tag/v0.1.0)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0006--3180--4767-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0006-3180-4767)
+
 This directory contains a short research draft giving the candidate lower
 bound
 
@@ -66,6 +70,8 @@ or replace either upstream large interval run.
   trust boundary, replay instructions, and exact upstream pin.
 - `CITATION.cff`, `LICENSE`, `NOTICE`, `CHANGELOG.md`, `MANIFEST.sha256`:
   release, third-party attribution, and integrity metadata.
+- `assets/social-preview.png`, `assets/social-preview.svg`: restrained social
+  preview artwork with an editable source, sized for GitHub link cards.
 - `verify_release.py`, `Makefile`, `.github/workflows/verify.yml`: one-command
   local verification and the same lightweight check in GitHub Actions.
 - `pyproject.toml`, `tests/`: standard project metadata and dependency-free

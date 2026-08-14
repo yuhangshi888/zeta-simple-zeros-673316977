@@ -16,11 +16,11 @@ commit.  The later sections track publication and independent follow-up.
 
 ## GitHub publication
 
-- [ ] Create the repository and upload the complete manifest-tracked tree.
-- [ ] Confirm the `verify` GitHub Actions job is green on the public commit.
-- [ ] Make the headline number, paper, proof outline, exact result, trust
+- [x] Create the repository and upload the complete manifest-tracked tree.
+- [x] Confirm the `verify` GitHub Actions job is green on the public commit.
+- [x] Make the headline number, paper, proof outline, exact result, trust
       boundary, and one-command check visible above the README fold.
-- [ ] Create an immutable tag `v0.1.0` and a GitHub Release named
+- [x] Create an immutable tag `v0.1.0` and a GitHub Release named
       `67.3316977142% research-draft candidate`; attach `main.pdf` if desired.
 - [ ] Record the release commit SHA in any announcement.
 - [ ] Archive the tagged release with Zenodo or another permanent repository,

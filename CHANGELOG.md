@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Marked the completed GitHub-publication checklist items.
+- Added the author's verified ORCID to the citation metadata.
+- Added verification, release, and ORCID badges plus GitHub social-preview
+  artwork.  No mathematical statement or numerical value was changed.
+
 ## v0.1.0 - 2026-08-14
 
 - Proved a two-certificate supporting-plane deduction using the certified

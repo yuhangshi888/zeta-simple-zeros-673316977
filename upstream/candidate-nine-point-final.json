@@ -1,0 +1,260 @@
+{
+  "bound_improvement_over_prior_candidate": 6.395396945357845e-08,
+  "cap_scheme": "finite-m-trace-envelope-plus-window-in-frame-pressure-count",
+  "certified_window_baseline": {
+    "denominator": 5000000000,
+    "numerator": 3362285207
+  },
+  "current_record": 0.6732001170127618,
+  "deduction_attribution": {
+    "source": "tawanerguo-cn/zeta-simple-zeros",
+    "commit": "45149f6d403059a71be73c5e3f884cee7cd62b20",
+    "license": "MIT"
+  },
+  "description": "Promoted Campaign 4 position-weighted nine-point candidate on the published perturbed window; independently float-validated and awaiting verify_general.",
+  "float_minimizing_gaps": [
+    1.0380368456650184,
+    1.976267441774638,
+    1.0388837672365134,
+    1.9726539577231619,
+    1.0384947052911064,
+    1.964068181294902,
+    1.0348237069572437,
+    1.02447768443671
+  ],
+  "float_minimum_observed": 0.006102730481857188,
+  "interval_certificate_needed": true,
+  "pair_order": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      0,
+      4
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      0,
+      7
+    ],
+    [
+      0,
+      8
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      1,
+      7
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      8
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      3,
+      6
+    ],
+    [
+      3,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      5
+    ],
+    [
+      4,
+      6
+    ],
+    [
+      4,
+      7
+    ],
+    [
+      4,
+      8
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      8
+    ]
+  ],
+  "pair_weight_denominator": 10000000,
+  "pair_weight_numerators": [
+    1802576,
+    4832031,
+    5411933,
+    10000000,
+    10000000,
+    10000000,
+    10000000,
+    20000000,
+    2694869,
+    2295599,
+    1780844,
+    0,
+    0,
+    0,
+    10000000,
+    2714860,
+    0,
+    2807223,
+    0,
+    0,
+    10000000,
+    2787695,
+    5744740,
+    2807223,
+    0,
+    10000000,
+    2787695,
+    0,
+    1780844,
+    10000000,
+    2714860,
+    2295599,
+    5411933,
+    2694869,
+    4832031,
+    1802576
+  ],
+  "pressure": {
+    "denominator": 2500,
+    "numerator": 1
+  },
+  "prior_candidate": "candidate-p2500-batch-experimental.json",
+  "projected_bound_if_certified": 0.6733127422722459,
+  "recommended_block_length": 177,
+  "relative_float_margin": 0.0030036525308928677,
+  "s": 9,
+  "span_capacity_numerators": [
+    20000000,
+    20000000,
+    20000000,
+    20000000,
+    20000000,
+    20000000,
+    20000000,
+    20000000
+  ],
+  "target_epsilon": {
+    "denominator": 2500000,
+    "numerator": 15211
+  },
+  "simple_rational_bound": {
+    "numerator": 673312,
+    "denominator": 1000000
+  },
+  "target_improvement_over_prior_candidate": 1e-07,
+  "window_coefficient_denominator": 1000000000,
+  "window_coefficient_numerators": [
+    1000000000,
+    3322500,
+    -7609135,
+    1190194,
+    -731476,
+    -1680572,
+    1141360
+  ],
+  "zero_enumeration_validation": {
+    "status": "survives DESIGN, independent VALIDATE, and doubled-budget deep VALIDATE searches",
+    "design_artifact": "search-p2500-batch-continuation2-validation.json",
+    "independent_artifacts": [
+      "../validate/gate-design-s9-p2500-batch-cont2.json",
+      "../validate/gate-design-s9-p2500-batch-cont2-seed307.json"
+    ],
+    "pressure_feasible_ordered_zero_tuples_polished": 3003,
+    "continuous_global_proof": false
+  }
+}

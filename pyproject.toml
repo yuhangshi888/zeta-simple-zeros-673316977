@@ -1,0 +1,20 @@
+[project]
+name = "zeta-simple-zeros-673316977"
+version = "0.1.0"
+description = "Exact two-certificate deduction for a 67.3316977142 percent critical-line simple-zero candidate bound"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Yuhang Shi", email = "yuhangshi888@gmail.com"}
+]
+keywords = [
+  "Riemann zeta function",
+  "simple zeros",
+  "critical line",
+  "certified inequalities"
+]
+
+[project.urls]
+Repository = "https://github.com/yuhangshi888/zeta-simple-zeros-673316977"
+Paper = "https://github.com/yuhangshi888/zeta-simple-zeros-673316977/blob/main/main.pdf"

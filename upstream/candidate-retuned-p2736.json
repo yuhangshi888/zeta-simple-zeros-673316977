@@ -1,0 +1,62 @@
+{
+  "description": "Pressure- and position-weight-retuned seven-point certificate using the 67.313763% window.",
+  "s": 7,
+  "pressure": {
+    "numerator": 1,
+    "denominator": 2736
+  },
+  "target_epsilon": {
+    "numerator": 891,
+    "denominator": 200000
+  },
+  "window_coefficient_denominator": 1000000000,
+  "window_coefficient_numerators": [
+    1000000000,
+    3322500,
+    -7609135,
+    1190194,
+    -731476,
+    -1680572,
+    1141360
+  ],
+  "pair_order": [
+    [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6],
+    [1, 2], [1, 3], [1, 4], [1, 5], [1, 6],
+    [2, 3], [2, 4], [2, 5], [2, 6],
+    [3, 4], [3, 5], [3, 6],
+    [4, 5], [4, 6],
+    [5, 6]
+  ],
+  "pair_weight_denominator": 1000000,
+  "pair_weight_numerators": [
+    236484, 535224, 969656, 1000000, 1000000, 2000000,
+    381281, 464776, 30344, 0, 1000000,
+    382235, 0, 30344, 1000000,
+    382235, 464776, 969656,
+    381281, 535224,
+    236484
+  ],
+  "span_capacity_numerators": [
+    2000000, 2000000, 2000000, 2000000, 2000000, 2000000
+  ],
+  "float_minimum_observed": 0.00446236055952976,
+  "float_minimizing_gaps": [
+    1.0379712117304345,
+    1.97928655335196,
+    1.0417547417222286,
+    1.981162119811304,
+    1.046839444576611,
+    1.9819986974541188
+  ],
+  "certified_window_baseline": {
+    "numerator": 3362285207,
+    "denominator": 5000000000
+  },
+  "recommended_block_length": 272,
+  "cap_scheme": "sqrt-tail-with-optimal-chord",
+  "certified_projected_bound": 0.6732001170127618,
+  "simple_rational_bound": {
+    "numerator": 1683,
+    "denominator": 2500
+  }
+}

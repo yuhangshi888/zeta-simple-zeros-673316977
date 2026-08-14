@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this research draft, please cite this repository and the pinned upstream certificate repository."
+title: "A two-certificate trace-energy deduction for simple zeros of the Riemann zeta function"
+type: article
+authors:
+  - family-names: "Shi"
+    given-names: "Yuhang"
+    email: "yuhangshi888@gmail.com"
+version: "0.1.0"
+date-released: 2026-08-14
+license: MIT
+repository-code: "https://github.com/yuhangshi888/zeta-simple-zeros-673316977"
+url: "https://github.com/yuhangshi888/zeta-simple-zeros-673316977"
+keywords:
+  - Riemann zeta function
+  - simple zeros
+  - critical line
+  - trace-energy envelope
+  - certified inequalities
+  - 67.3316977142 percent

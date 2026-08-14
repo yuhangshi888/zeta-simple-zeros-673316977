@@ -1,0 +1,17 @@
+# Cross-host split certification: union of disjoint shard ranges on identical tables
+# covers all 96 initial-box shards; table hashes match across hosts.
+label=onetick-m3
+verified=True
+shards=[0,64) of 96
+nodes=78458316
+maximum_depth=75
+table_hashes=[('2be38c2f2a5a4659200341fae9b2a926760e64ad04fa44ae214a77dd958c56e3', '580e9682f1171ead19595438ee83c9f4c5af837179060ec49d9faee88032f6d5')]
+wall=10517s
+
+label=onetick-m4
+verified=True
+shards=[64,96) of 96
+nodes=37814110
+maximum_depth=75
+table_hashes=[('2be38c2f2a5a4659200341fae9b2a926760e64ad04fa44ae214a77dd958c56e3', '580e9682f1171ead19595438ee83c9f4c5af837179060ec49d9faee88032f6d5')]
+wall=6743s

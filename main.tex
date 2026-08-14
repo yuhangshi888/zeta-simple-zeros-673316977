@@ -1,0 +1,541 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+\allowdisplaybreaks[2]
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\R}{\mathbb R}
+\newcommand{\D}{\mathcal D}
+\newcommand{\F}{\mathrm F}
+
+\title[Two-certificate trace--energy deduction]
+{A two-certificate trace--energy deduction for simple zeros of the
+Riemann zeta function}
+\author{Yuhang Shi}
+\email{yuhangshi888@gmail.com}
+\date{August 14, 2026}
+
+\begin{document}
+\begin{abstract}
+Let $N(T,2T)$ count the nontrivial zeros of the Riemann zeta function with
+ordinates in $(T,2T]$, with multiplicity, and let $N_0^s(T,2T)$ count the
+simple zeros on the critical line in that interval.  We refine the
+finite-block deduction used in recent stability improvements of the
+rank--trace method.  The pressure term in a local gap certificate can be
+absorbed by a supporting plane obtained from two certified local gap
+inequalities and the finite-dimensional trace--energy envelope.  Applied to
+the certified seven- and nine-point inequalities on the common window of
+\texttt{trmdy/zeta-simple-zeros-673137}, the refinement gives the
+research-draft candidate
+\[
+ \liminf_{T\to\infty}\frac{N_0^s(T,2T)}{N(T,2T)}
+ \ge 0.6733169771424713\ldots>0.673316977.
+\]
+No new large numerical search is needed: the only new input is a
+finite-dimensional inequality proved here.  The analytic interface and the
+machine-certified local inequality are imported at their explicitly stated
+proof boundary.
+\end{abstract}
+\maketitle
+
+\section{Statement and proof boundary}
+
+Put
+\[
+ S=N_0^s(T,2T),\qquad N=N(T,2T).
+\]
+We use the arbitrary-window Gabor and stability interface developed in
+\cite{Claude2026,Ainta2026} and instantiated with a perturbed admissible
+window in \cite{Trmdy2026}.  In the notation of those sources, it gives
+\begin{equation}\label{eq:interface}
+ S\ge H_{\rm cert}N+\D(M)-o(N),
+ \qquad
+ H_{\rm cert}=\frac{3362285207}{5000000000},
+\end{equation}
+where $M$ is the Gram matrix of the retained simple-zero atoms and
+\[
+ \D(G)=\tr\Psi(G),\qquad
+ \Psi(t)=
+ \begin{cases}
+  (t-1)^2,&0\le t\le2,\\
+  2t-3,&t\ge2.
+ \end{cases}
+\]
+For every fixed $R_0>0$, the entries of a fixed-size principal Gram block
+satisfy, uniformly when all its normalized separations are at most $R_0$,
+\begin{equation}\label{eq:gram-limit}
+ G_{ij}=k_v(y_i-y_j)+o(1),
+\end{equation}
+where $k_v$ is the normalized overlap kernel of the chosen window.  We also
+use convex spectral pinching and the shifted consecutive-block
+decomposition of \cite{Ainta2026,Trmdy2026}.
+
+The finite inputs are two certified inequalities from \cite{Trmdy2026}.
+Let $w=k_v^2$.  For $q\in\{6,8\}$, let $g_1,\ldots,g_q\ge0$, put $y_0=0$
+and $y_j=g_1+\cdots+g_j$, and define
+\[
+ (\epsilon_q,p_q)=
+ \begin{cases}
+  (891/200000,1/2736),&q=6,\\
+  (15211/2500000,1/2500),&q=8.
+ \end{cases}
+\]
+There are nonnegative rational numbers $a_{ij}^{(q)}$ such that
+\begin{align}
+ p_q\sum_{r=1}^qg_r
+ +\sum_{0\le i<j\le q}a_{ij}^{(q)}w(y_j-y_i)
+ &\ge \epsilon_q,
+ \label{eq:local}\\
+ \sum_{i=0}^{q-r}a_{i,i+r}^{(q)}&=2
+ \qquad(1\le r\le q).
+ \label{eq:capacity}
+\end{align}
+The exact $21$ and $36$ weights and their exhaustive interval certificates
+are contained in the repository at commit
+\texttt{1610b97b7895ff34982260f8dcaf04a0f7b82cf7}.  Our result is conditional
+only in the sense that \eqref{eq:interface}, \eqref{eq:gram-limit}, and the
+machine certificate \eqref{eq:local} are imported rather than reproved here.
+
+\begin{theorem}\label{thm:main}
+Subject to the imported interfaces and certificate just specified,
+\[
+ \liminf_{T\to\infty}\frac{N_0^s(T,2T)}{N(T,2T)}
+ \ge B,
+\]
+where, with
+\begin{align*}
+ A_7&=\frac{189783}{200000},
+ \qquad A_9=\frac{3209521}{2500000},\\
+ R&=2\sqrt{\frac{349837789}{273750000}}-1
+       +\frac{3209521}{547500000},\\
+ u&=\frac{R-A_7}{A_9-A_7},\\
+ B&=
+ \frac{219H_{\rm cert}
+ -(1-u)\,213\cdot6/2736-u\,211\cdot8/2500}{219-R},
+\end{align*}
+one has
+\[
+ B=0.6733169771424713134\ldots
+ >\frac{673316977}{10^9}.
+\]
+\end{theorem}
+
+The preceding public assembly of the nine-point certificate gives
+$0.6733127422722459981\ldots$ \cite{Trmdy2026}; thus the gain in proportion
+is approximately $4.2349\times10^{-6}$.  All such August 2026 follow-up
+values are very recent and should be regarded as research-draft candidates
+pending independent mathematical review.
+
+\section{The scaled pressure lemma}
+
+For $m\ge3$, define
+\begin{equation}\label{eq:phi}
+ \Phi_m(E)=
+ \begin{cases}
+  E,&0\le E\le m/(m-1),\\[2mm]
+  2\sqrt{\dfrac{m-1}{m}E}-1+\dfrac Em,
+    &E\ge m/(m-1).
+ \end{cases}
+\end{equation}
+The function is increasing and concave.  Indeed, it is linear on the first
+branch, has negative second derivative on the second branch, and the two
+one-sided derivatives agree and equal $1$ at $E=m/(m-1)$.
+
+\begin{lemma}[Scaled finite-dimensional envelope]\label{lem:scaled}
+Let $G$ be an $m\times m$ positive-semidefinite matrix with unit diagonal.
+If its eigenvalues are $\lambda_1,\ldots,\lambda_m$, put
+\[
+ E=\sum_{i=1}^m(\lambda_i-1)^2,
+ \qquad D=\tr\Psi(G).
+\]
+Let $A\ge m/(m-1)$ satisfy $\Phi_m(A)<2$, set
+\[
+ R=\Phi_m(A),\qquad \eta=\frac RA,
+\]
+and let $P\ge0$.  If $E+P\ge A$, then
+\begin{equation}\label{eq:scaled}
+ D+\eta P\ge R.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $x_i=\lambda_i-1$.  Then $x_i\ge-1$, $\sum_i x_i=0$, and
+$E=\sum_i x_i^2$.  Let
+\[
+ L=\{i:x_i>1\},\quad q=|L|,
+ \quad X=\sum_{i\in L}x_i,
+ \quad Q=\sum_{i\in L}x_i^2.
+\]
+If $q>0$, then $q<m$, because $\sum_i x_i=0$.
+Since the quadratic branch $x_i^2$ is replaced by $2x_i-1$ precisely on
+$L$,
+\begin{equation}\label{eq:Didentity}
+ D=E+2X-q-Q.
+\end{equation}
+
+If $q\ge2$, Cauchy--Schwarz on the $m-q$ complementary coordinates gives
+$E-Q\ge X^2/(m-q)$.  Since $X>q$,
+\begin{equation}\label{eq:qge2}
+ D\ge2X-q+\frac{X^2}{m-q}
+ >q+\frac{q^2}{m-q}=\frac{qm}{m-q}>2>R.
+\end{equation}
+
+Suppose next that $q=1$, and write $x_i=r>1$ for the unique large
+coordinate.  Cauchy--Schwarz on the remaining $m-1$ coordinates gives
+\[
+ E\ge r^2+\frac{r^2}{m-1},
+ \qquad
+ r\le\sqrt{\frac{m-1}{m}E}.
+\]
+In particular, the right endpoint in the latter inequality is greater than
+$1$.
+By \eqref{eq:Didentity},
+\[
+ D=E+2r-1-r^2.
+\]
+The function $2r-r^2$ decreases for $r\ge1$, and therefore
+\begin{equation}\label{eq:one-large}
+ D\ge\Phi_m(E).
+\end{equation}
+If $q=0$, then simply $D=E$; moreover $q=0$ necessarily holds when
+$E<m/(m-1)$.
+
+The concavity of $\Phi_m$ and $\Phi_m(0)=0$ imply the chord inequality
+\begin{equation}\label{eq:chord}
+ \Phi_m(E)\ge\frac EA\Phi_m(A)=\eta E
+ \qquad(0\le E\le A).
+\end{equation}
+Also $R\le A$, since on the second branch
+\[
+ A-\Phi_m(A)
+ =\left(\sqrt{\frac{m-1}{m}A}-1\right)^2\ge0.
+\]
+If $E<A$, then \eqref{eq:qge2}, \eqref{eq:one-large}, the $q=0$ case, and
+\eqref{eq:chord} give either $D>R$ or $D\ge\eta E$.  In the latter case
+$D+\eta P\ge\eta(E+P)\ge R$.  If $E\ge A$, the same case analysis gives
+$D\ge R$: this is immediate when $q\ge2$; when $q=1$ it follows from
+\eqref{eq:one-large} and monotonicity of $\Phi_m$; and when $q=0$ it follows
+from $D=E\ge A\ge R$.  This proves \eqref{eq:scaled}.
+\end{proof}
+
+The next form retains two independent local constraints before paying their
+global pressure costs.
+
+\begin{lemma}[Two-certificate supporting plane]\label{lem:two}
+Let $G$, $E$, and $D$ be as in Lemma~\ref{lem:scaled}.  Suppose that
+\[
+ E+p_7L_7\ge A_7,\qquad E+p_9L_9\ge A_9,
+ \qquad L_7\ge\frac34L_9,
+\]
+where $L_7,L_9\ge0$, $0<A_7<m/(m-1)<A_9$, and
+$R=\Phi_m(A_9)<2$.  Put
+\[
+ u=\frac{R-A_7}{A_9-A_7},\qquad
+ \beta=(1-u)p_7,qquad \gamma=up_9.
+\]
+If $0\le u\le1$, $A_7/p_7\ge3A_9/(4p_9)$, and
+\begin{equation}\label{eq:slope-condition}
+ \frac{3\beta}{4p_9}+\frac{\gamma}{p_9}\le1,
+\end{equation}
+then
+\begin{equation}\label{eq:two-plane}
+ D+\beta L_7+\gamma L_9\ge R.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The case $D>R$ is immediate.  In every remaining case of the proof of
+Lemma~\ref{lem:scaled}, $D\ge\Phi_m(E)$.  The two hypotheses and
+$L_7\ge3L_9/4$ give
+\begin{align*}
+ L_9&\ge\max\!\left(\frac{A_9-E}{p_9},0\right),\\
+ L_7&\ge
+ \max\!\left(\frac{A_7-E}{p_7},
+       \frac34\frac{A_9-E}{p_9},0\right).
+\end{align*}
+It is thus enough to minimize the resulting lower bound as a function of
+$E\ge0$.
+
+On $[0,A_7]$ the first branch of \eqref{eq:phi} applies.  The lower bound is
+piecewise affine.  At $E=0$ the active lower bound for $L_7$ is
+$(A_7-E)/p_7$ by the extra numerical hypothesis; when the active affine
+branch changes, the slope remains nonnegative by
+\eqref{eq:slope-condition} and by
+\[
+ \frac{\beta}{p_7}+\frac{\gamma}{p_9}=1.
+\]
+Its value at $E=0$ is $R$.  On $[A_7,A_9]$ it is
+\[
+ \Phi_m(E)+\left(\frac{3\beta}{4}+\gamma\right)
+ \frac{A_9-E}{p_9}.
+\]
+More precisely, the first interval starts at the value $R$ and has
+nonnegative slope, so its value at $A_7$ is at least $R$.  The latter
+function is concave, has that same value at $A_7$, and equals $R$ at $A_9$;
+hence it is at least $R$ throughout.  For $E\ge A_9$, monotonicity of
+$\Phi_m$ gives $\Phi_m(E)\ge R$.  This proves \eqref{eq:two-plane}.
+\end{proof}
+
+\begin{remark}
+The slope $\eta$ is optimal for a conclusion of the form
+$D+cP\ge\Phi_m(A)$ based only on $E+P\ge A$: at $E=0$, $P=A$, one must have
+$cA\ge\Phi_m(A)$.  Thus the improvement below is the full gain available
+from rescaling this single pressure term at a fixed block length.
+\end{remark}
+
+\section{Application to the seven- and nine-point certificates}
+
+Let $S^\circ$ denote the number of retained central simple zeros.  The
+endpoint trimming in the imported interface gives
+\begin{equation}\label{eq:retained}
+ S^\circ=S-o(N).
+\end{equation}
+Fix $m=219$ and partition these retained zeros into consecutive $m$-point
+blocks.  For a block
+\[
+ y_1<\cdots<y_m,
+\]
+let $W_{q,B}$ be the sum of the spans of all consecutive $(q+1)$-point
+windows fully contained in the block:
+\[
+ W_{q,B}=\sum_{j=1}^{m-q}(y_{j+q}-y_j)\qquad(q=6,8).
+\]
+Summing \eqref{eq:local} over these $m-q$ windows and using
+\eqref{eq:capacity}, every pair term receives total coefficient at most
+$2$.  Hence, with
+\[
+ E_B=2\sum_{1\le i<j\le m}w(y_j-y_i),
+\]
+we have the two simultaneous estimates
+\begin{equation}\label{eq:block-energy}
+ E_B+p_qW_{q,B}\ge A_q:=\epsilon_q(m-q)
+ \qquad(q=6,8).
+\end{equation}
+Moreover, coefficientwise in the individual gaps,
+\begin{equation}\label{eq:span-comparison}
+ W_{6,B}\ge\frac34W_{8,B}.
+\end{equation}
+Indeed, an interior gap occurs six times in $W_{6,B}$ and eight times in
+$W_{8,B}$, while at either endpoint the two multiplicities increase together
+from one to six.
+
+For $m=219$,
+\[
+ A_7=\frac{189783}{200000}<\frac{219}{218}
+ <A_9=\frac{3209521}{2500000},
+\]
+and
+\begin{equation}\label{eq:R}
+ R=\Phi_{219}(A_9)
+ =2\sqrt{\frac{349837789}{273750000}}-1
+   +\frac{3209521}{547500000}
+ =1.2667878440823898\ldots<2.
+\end{equation}
+Put $u=(R-A_7)/(A_9-A_7)$,
+$\beta=(1-u)/2736$, and $\gamma=u/2500$.
+Then $0<u<1$, and
+\[
+ \frac{\beta}{1/2736}+\frac{\gamma}{1/2500}=1.
+\]
+Also $3\beta/(4p_9)+\gamma/p_9<1$: as a function of $u$ its slope is
+$1-3p_7/(4p_9)=287/912>0$, and it equals $1$ at $u=1$, whereas $u<1$.
+Finally,
+\[
+ \frac{A_7}{p_7}-\frac{3A_9}{4p_9}
+ =\frac{18909069}{100000}>0.
+\]
+
+We claim that every full block satisfies
+\begin{equation}\label{eq:block-defect}
+ \D(G_B)+\beta W_{6,B}+\gamma W_{8,B}\ge R-o(1),
+\end{equation}
+uniformly in the block.  If
+$\beta W_{6,B}+\gamma W_{8,B}\ge R$, this is automatic.  Otherwise
+$W_{8,B}<R/\gamma$, since $\gamma>0$, so $W_{8,B}$ is uniformly bounded.
+Because every gap in the block occurs in at least one of its nine-point
+windows,
+\[
+ y_m-y_1\le W_{8,B};
+\]
+thus the whole block has uniformly bounded span.  The compact-uniform
+asymptotic \eqref{eq:gram-limit}, with fixed $m$, gives
+\[
+ 2\sum_{i<j}|(G_B)_{ij}|^2=E_B+o(1)
+\]
+uniformly.  The diagonal entries are $1+o(1)$ in the imported interface.
+Let $\widetilde G_B$ be the correlation normalization of $G_B$.  It is
+positive semidefinite with unit diagonal and, because $m$ is fixed, replacing
+$G_B$ by $\widetilde G_B$ changes its finitely many entries, its energy, and
+$\D$ by $o(1)$ uniformly.  For $\widetilde G_B$ the energy is exactly
+$\operatorname{tr}(\widetilde G_B-I)^2
+=2\sum_{i<j}|(\widetilde G_B)_{ij}|^2$.
+Lemma~\ref{lem:two}, continuity of $\Phi_{219}$, and
+\eqref{eq:block-energy}--\eqref{eq:span-comparison} then prove
+\eqref{eq:block-defect}.
+
+It remains to average \eqref{eq:block-defect}.  Use the $m$ shifted
+partitions into consecutive $m$-point blocks, retaining an endpoint block of
+at most $2(m-1)$ points for each shift.  Convex spectral pinching gives
+\[
+ \D(M)\ge\sum_B\D(G_B)
+\]
+for every shift.  A fixed consecutive $(q+1)$-point window is fully contained
+in a block for at most $m-q$ of the $m$ shifts, with equality away from the
+two finite endpoints.  Endpoint omissions only decrease the pressure sums,
+whereas the number of full blocks, averaged over the shifts, is
+$S^\circ/m+O_m(1)$.  Moreover,
+\begin{equation}\label{eq:window-count}
+ \sum_j(y_{j+q}-y_j)
+ \le q(y_{S^\circ}-y_1)\qquad(q=6,8),
+\end{equation}
+because every gap occurs in at most $q$ consecutive $(q+1)$-point windows.
+The normalized total span is at most $N+o(N)$ by the
+Riemann--von Mangoldt formula.  The blockwise $o(1)$ in
+\eqref{eq:block-defect} is uniform and the number of blocks is $O(S)$.
+Consequently
+\begin{equation}\label{eq:global-defect}
+ \D(M)\ge
+ \frac{R}{m}S^\circ
+ -\frac{\beta\,6(m-6)+\gamma\,8(m-8)}mN-o(N).
+\end{equation}
+Using \eqref{eq:retained} replaces $S^\circ$ by $S$ at a cost $o(N)$.
+
+Substituting \eqref{eq:global-defect} into \eqref{eq:interface} and
+rearranging gives
+\begin{equation}\label{eq:bound}
+ \frac SN\ge
+ \frac{mH_{\rm cert}-\beta\,6(m-6)-\gamma\,8(m-8)}{m-R}-o(1).
+\end{equation}
+At $m=219$, this is the constant $B$ in Theorem~\ref{thm:main}.
+
+For completeness, the strict decimal comparison can be checked using
+rational arithmetic and one squaring.  From \eqref{eq:R},
+\[
+ R>R_0:=\frac{6333939}{5000000},
+\]
+because
+\[
+ \frac{349837789}{273750000}
+ -\left(\frac{R_0+1-A_9/219}{2}\right)^2
+ =\frac{239006467199}{4796100000000000000}>0.
+\]
+Since
+\[
+ \beta\,6(m-6)+\gamma\,8(m-8)
+ =\frac{19769000}{31814873}R-\frac{389820601}{3181487300},
+\]
+the right-hand side of \eqref{eq:bound} is increasing in $R$: its derivative
+has the sign of
+\[
+ \frac{1799014260305932709}{159074365000000000}>0.
+\]
+Replacing $R$ by $R_0$ therefore gives the rational comparison
+\[
+ \frac{23320853620214932709}{34635772470125253000}
+ -\frac{673316977}{10^9}
+ =\frac{4570374547679819}{34635772470125253000000000}>0.
+\]
+This proves the final strict inequality without relying on rounded decimal
+arithmetic.
+
+\section{Relation to the preceding deduction}
+
+The preceding public finite-block argument uses one local certificate at a
+time.  Lemma~\ref{lem:two} retains the simultaneous consequences of the
+certified seven- and nine-point inequalities before their pressure terms are
+paid globally.  The parameter $u$ is the barycentric coordinate of $R$
+between $A_7$ and $A_9$, so the resulting pressure tax is a weighted
+combination of two independently certified taxes.  No window, local weight,
+or interval certificate has been changed.
+
+For comparison, the one-certificate implication is
+\[
+ E+P\ge A\quad\Longrightarrow\quad
+ D+P\ge\Phi_m(A).
+\]
+Lemma~\ref{lem:scaled} replaces the coefficient of $P$ by
+$\eta=\Phi_m(A)/A<1$.  In the shifted-block average this decreases the
+global pressure tax while preserving the same block defect $R$.  No window,
+local weights, or interval certificate has been changed.
+
+The Schur--Jensen remainder in \cite{Shi2026} is not added separately here.
+Its scalar function $g$ satisfies $\Psi(t)=g(t)+1$.  If
+$d_j=M_{jj}\le1$ and
+\(
+ \mathcal S_g=\tr g(M)-\sum_jg(d_j),
+\)
+then the exact identity
+\[
+ \tr\Psi(M)-\mathcal S_g
+ =\sum_j\bigl(1+g(d_j)\bigr)
+ =\sum_j(1-d_j)^2\ge0
+\]
+holds.  In particular, the two quantities agree for a unit-diagonal Gram
+matrix.
+Adding both terms would therefore double count the same stability slack.
+The earlier work motivated retaining this information, but the present gain
+comes specifically from a sharper use of the already retained
+$\tr\Psi$ defect.
+
+\section*{Acknowledgements}
+
+The author thanks the contributors of the certified local inequalities and
+window in \cite{Trmdy2026}.  The finite-dimensional envelope and
+window-in-frame counting used there trace to \cite{Tawan2026}.
+
+\begin{thebibliography}{99}
+
+\bibitem{Claude2026}
+Claude,
+\emph{More than two thirds of the zeros of the Riemann zeta function lie on
+the critical line}, preprint, August 10, 2026; paper and Lean~4 artifact,
+\url{https://github.com/anthropics/zeta-23-lean}.
+
+\bibitem{Ainta2026}
+\texttt{ainta/zeta-simple-zeros},
+\emph{More than $67.3\%$ of the zeros of the Riemann zeta function are
+simple and lie on the critical line}, research repository, 2026,
+\url{https://github.com/ainta/zeta-simple-zeros}.
+
+\bibitem{Tawan2026}
+\path{tawanerguo-cn/zeta-simple-zeros},
+\emph{A certified unconditional $67.3192911473\%$ lower bound for simple
+zeros of the Riemann zeta function}, research repository, 2026,
+\url{https://github.com/tawanerguo-cn/zeta-simple-zeros}.
+
+\bibitem{Trmdy2026}
+\texttt{trmdy/zeta-simple-zeros-673137},
+\emph{A $67.3312742272\%$ lower-bound candidate for simple zeros of zeta},
+research repository, commit
+\texttt{1610b97b7895ff34982260f8dcaf04a0f7b82cf7}, 2026,
+\url{https://github.com/trmdy/zeta-simple-zeros-673137}.
+
+\bibitem{Shi2026}
+Y.~Shi,
+\emph{A Schur--Jensen Gain in the Critical-Line Zero Problem},
+Zenodo, 2026,
+\url{https://doi.org/10.5281/zenodo.21903013}.
+
+\bibitem{Montgomery1973}
+H.~L.~Montgomery,
+\emph{The pair correlation of zeros of the zeta function}, in
+\emph{Analytic Number Theory}, Proc. Sympos. Pure Math. \textbf{24},
+Amer. Math. Soc., 1973, 181--193.
+
+\end{thebibliography}
+
+\end{document}

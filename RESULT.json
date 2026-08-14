@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "research-draft candidate pending independent mathematical review",
+  "title": "A two-certificate trace-energy deduction for simple zeros of the Riemann zeta function",
+  "author": "Yuhang Shi",
+  "date": "2026-08-14",
+  "quantity": "liminf_{T->infinity} N_0^s(T,2T) / N(T,2T)",
+  "candidate_lower_bound_decimal": "0.673316977142471313480285307148899888",
+  "candidate_lower_bound_percent": "67.3316977142471313480285307148899888",
+  "proved_strict_rational_bound": {
+    "numerator": 673316977,
+    "denominator": 1000000000
+  },
+  "block_length": 219,
+  "window_baseline": {
+    "numerator": 3362285207,
+    "denominator": 5000000000
+  },
+  "seven_point_input": {
+    "pressure": "1/2736",
+    "target": "891/200000",
+    "span_capacities": "all exactly 2",
+    "reported_certificate_nodes": 2168370
+  },
+  "nine_point_input": {
+    "pressure": "1/2500",
+    "target": "15211/2500000",
+    "span_capacities": "all exactly 2",
+    "reported_certificate_nodes": 116272426
+  },
+  "upstream": {
+    "repository": "https://github.com/trmdy/zeta-simple-zeros-673137",
+    "commit": "1610b97b7895ff34982260f8dcaf04a0f7b82cf7"
+  },
+  "local_verification": "python3 verify_release.py",
+  "trust_boundary": "The new deduction and exact arithmetic are local. The analytic interface and both exhaustive interval certificates are pinned imports and were not independently replayed in this repository."
+}

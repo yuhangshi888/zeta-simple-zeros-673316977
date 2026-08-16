@@ -33,6 +33,23 @@ python3 -m unittest discover -s tests
 lengths and reports `m = 219`.  It does not search for local gap weights or
 replace either upstream interval certificate.
 
+## Lean 4 check of the local proof layer
+
+The Lean toolchain and exact Mathlib revision are pinned under `lean/`.
+
+```bash
+cd lean
+lake exe cache get
+lake build
+lake env lean Audit.lean
+```
+
+This checks the abstract and concrete supporting-plane theorems, the
+`Phi_219` chord profile, the radical comparison, the affine tax identity, and
+the final strict lower bound.  `Audit.lean` reports no `sorryAx` dependency.
+The imported interval certificates and analytic zeta-function interface are
+outside this formalization; see `lean/README.md` for the exact boundary.
+
 ## Compile the manuscript
 
 The source is `main.tex`; a standard LaTeX installation or Tectonic can
@@ -73,6 +90,8 @@ inputs, but they are not an independent replay of the interval searches.
 ## Trust base
 
 - the proof in `main.tex` and ordinary exact rational arithmetic;
+- Lean 4, the pinned Mathlib revision, and its standard logical axioms for the
+  machine-checked local layer;
 - the Python interpreter for the convenience checks;
 - the pinned upstream analytic interface and two finite certificates;
 - the upstream Arb/FLINT verifier, operating system, and hardware for any

@@ -16,6 +16,13 @@ deduction.  The new material consists of:
 No floating-point optimization, new gap weights, new window, or new large
 interval run is used in this deduction.
 
+The repository now includes a no-`sorry` Lean 4 formalization of the new
+supporting-plane and exact-arithmetic layer.  The upstream certificates and
+analytic interface remain explicit imported hypotheses.  The formal proof
+also shows that the span comparison and auxiliary slope conditions are
+unnecessary for the supporting-plane conclusion; this strengthens the local
+lemma without changing the coefficients or final value.
+
 The immutable `v0.1.0` release is permanently archived at
 [Zenodo](https://doi.org/10.5281/zenodo.21926962), version DOI
 `10.5281/zenodo.21926962`, from Git commit

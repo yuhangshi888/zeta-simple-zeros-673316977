@@ -1,6 +1,6 @@
 # Zero-trust claim ledger
 
-Audit date: 2026-08-14.
+Audit date: 2026-08-16.
 
 ## Verified in this draft
 
@@ -30,6 +30,12 @@ Audit date: 2026-08-14.
    commit shows that the two candidate files use the identical window
    coefficient vector, list nonnegative rational pair weights, and declare
    every span capacity exactly `2`. Their logs state `verified=True`.
+8. **Lean-checked local layer.**  Lean 4 verifies, with no `sorry`, the
+   two-certificate supporting-plane theorem, the identity/chord/monotonicity
+   profile of the explicit `Phi_219`, the exact radical enclosure, the
+   affine pressure tax, and the final strict rational comparison.  The
+   certificate inequalities and the trace-envelope alternative are explicit
+   theorem hypotheses, not hidden axioms.
 
 ## Cited/imported, not independently reproved here
 
@@ -75,3 +81,13 @@ value `R` at both `E=0` and `E=A_7`. The exact proof only needs, and gives,
 equality at `E=0` and a value at least `R` at `E=A_7`; the following
 concavity argument then applies. The manuscript wording has been corrected.
 The lemma, constants, and final lower bound are unchanged.
+
+## Simplification found by formalization
+
+The formal proof shows that `W_6 >= 3 W_8/4`,
+`A_7/p_7 >= 3A_9/(4p_9)`, and the extra slope inequality are not needed for
+the supporting-plane conclusion.  On `[0,A_7]` one combines both certificate
+bounds; on `[A_7,A_9]` the nine-point bound alone pays the gap from the chord
+of `Phi_219`; and on `[A_9,infinity)` the envelope itself reaches `R`.
+The manuscript theorem remains valid as stated, and its coefficients and
+numerical result are unchanged.

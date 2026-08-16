@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Added a pinned Lean 4 formalization, with no `sorry`, of the abstract
+  supporting-plane theorem, the concrete `Phi_219` profile, the exact radical
+  enclosure and tax identity, and the final strict comparison.
+- Recorded the formal simplification that the span comparison and auxiliary
+  slope hypotheses are unnecessary for the supporting-plane conclusion; the
+  manuscript statement and numerical result remain unchanged.
 - Marked the completed GitHub-publication checklist items.
 - Added the author's verified ORCID to the citation metadata.
 - Added verification, release, and ORCID badges plus GitHub social-preview

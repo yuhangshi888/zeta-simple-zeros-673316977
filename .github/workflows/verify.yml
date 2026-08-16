@@ -16,3 +16,17 @@ jobs:
         run: python3 -m unittest discover -s tests
       - name: Verify manifest and exact deduction
         run: python3 verify_release.py
+
+  lean-local-deduction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build no-sorry Lean verification
+        uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: lean
+          build: true
+          test: false
+      - name: Print load-bearing axiom dependencies
+        working-directory: lean
+        run: lake env lean Audit.lean

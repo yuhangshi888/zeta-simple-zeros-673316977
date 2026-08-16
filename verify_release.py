@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent
 def release_files() -> set[str]:
     """Return the files that must be represented in the release manifest."""
     generated_suffixes = (".aux", ".log", ".out", ".synctex.gz", ".xdv")
-    ignored_directories = {".git", "__pycache__", "tmp"}
+    ignored_directories = {".git", ".lake", "__pycache__", "tmp"}
     files: set[str] = set()
     for path in ROOT.rglob("*"):
         if not path.is_file():

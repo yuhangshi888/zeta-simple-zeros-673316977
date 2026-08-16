@@ -23,6 +23,7 @@ at commit `1610b97b7895ff34982260f8dcaf04a0f7b82cf7`.
 **[Paper](main.pdf)** · **[Permanent archive](https://doi.org/10.5281/zenodo.21926962)** ·
 **[Proof outline](PROOF_OUTLINE.md)** ·
 **[Exact result](RESULT.json)** · **[Independent review guide](REVIEW_GUIDE.md)** ·
+**[Lean 4 verification](lean/README.md)** ·
 **[Submit a verification report](https://github.com/yuhangshi888/zeta-simple-zeros-673316977/issues/new?template=verification-report.yml)**
 
 Version record: `v0.1.0` is fixed at commit
@@ -41,6 +42,10 @@ not a claim of accepted priority.
   concavity argument.
 - Final comparison `> 0.673316977`: reduced to exact rational arithmetic and
   one explicit squaring in `main.tex`.
+- The new supporting-plane deduction, the concrete `Phi_219` chord profile,
+  and the exact final comparison are machine-checked in Lean 4 with no
+  `sorry`.  The formal theorem is slightly stronger than the manuscript
+  lemma: its span-comparison and extra slope hypotheses are not needed.
 - Imported analytic and computational inputs: the arbitrary-window
   stability interface, compact-uniform Gram limit, and the upstream
   interval certificates.  This draft does not claim to have independently
@@ -56,6 +61,17 @@ python3 verify_release.py
 This checks the manifest, the displayed constants, the exact rational
 comparison, and the closed-form block-length diagnostic. It does not perform
 or replace either upstream large interval run.
+
+The independent Lean check is:
+
+```bash
+cd lean
+lake exe cache get
+lake build
+lake env lean Audit.lean
+```
+
+Its trust boundary is stated precisely in [`lean/README.md`](lean/README.md).
 
 ## Files
 
@@ -80,7 +96,9 @@ or replace either upstream large interval run.
 - `assets/social-preview.png`, `assets/social-preview.svg`: restrained social
   preview artwork with an editable source, sized for GitHub link cards.
 - `verify_release.py`, `Makefile`, `.github/workflows/verify.yml`: one-command
-  local verification and the same lightweight check in GitHub Actions.
+  local verification, Lean build, and corresponding GitHub Actions checks.
+- `lean/`: pinned Lean 4/Mathlib sources for the supporting-plane theorem,
+  the concrete `Phi_219` profile, and the exact final comparison.
 - `pyproject.toml`, `tests/`: standard project metadata and dependency-free
   unit tests for the exact comparison and input compatibility.
 - `RELEASE_CHECKLIST.md`: immutable-release, DOI, disclosure, and correction

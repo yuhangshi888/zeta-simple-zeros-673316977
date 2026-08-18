@@ -8,10 +8,10 @@
 This directory contains a short research draft giving the candidate lower
 bound
 
-\[
+```math
 \liminf_{T\to\infty}\frac{N_0^s(T,2T)}{N(T,2T)}
 \ge 0.6733169771424713\ldots>0.673316977.
-\]
+```
 
 The new step is purely finite-dimensional: the certified seven- and
 nine-point gap inequalities are retained simultaneously and absorbed by a

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Corrected the GitHub rendering of the headline display formula in the
+  repository README.  No mathematical statement or numerical value changed.
 - Added a pinned Lean 4 formalization, with no `sorry`, of the abstract
   supporting-plane theorem, the concrete `Phi_219` profile, the exact radical
   enclosure and tax identity, and the final strict comparison.

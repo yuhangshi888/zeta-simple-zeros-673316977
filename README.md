@@ -43,9 +43,13 @@ not a claim of accepted priority.
 - Final comparison `> 0.673316977`: reduced to exact rational arithmetic and
   one explicit squaring in `main.tex`.
 - The new supporting-plane deduction, the concrete `Phi_219` chord profile,
-  and the exact final comparison are machine-checked in Lean 4 with no
-  `sorry`.  The formal theorem is slightly stronger than the manuscript
-  lemma: its span-comparison and extra slope hypotheses are not needed.
+  and the exact final comparison are machine-checked in Lean 4.  The
+  substantive proof modules and the Palomar `Solution.lean` wrappers contain
+  no `sorry`; `Challenge.lean` has three deliberate statement holes for
+  Comparator.  The Palomar wrapper isolates the conditional scalar step: once
+  its trace-envelope alternative is supplied, the span-comparison and extra
+  slope hypotheses are not needed.  The spectral derivation of that
+  alternative is outside the formalized scope.
 - Imported analytic and computational inputs: the arbitrary-window
   stability interface, compact-uniform Gram limit, and the upstream
   interval certificates.  This draft does not claim to have independently
@@ -98,7 +102,8 @@ Its trust boundary is stated precisely in [`lean/README.md`](lean/README.md).
 - `verify_release.py`, `Makefile`, `.github/workflows/verify.yml`: one-command
   local verification, Lean build, and corresponding GitHub Actions checks.
 - `lean/`: pinned Lean 4/Mathlib sources for the supporting-plane theorem,
-  the concrete `Phi_219` profile, and the exact final comparison.
+  the concrete `Phi_219` profile, and the exact final comparison, together
+  with the small Palomar Challenge/Solution statement surface and metadata.
 - `pyproject.toml`, `tests/`: standard project metadata and dependency-free
   unit tests for the exact comparison and input compatibility.
 - `RELEASE_CHECKLIST.md`: immutable-release, DOI, disclosure, and correction

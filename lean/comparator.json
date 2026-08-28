@@ -1,0 +1,12 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "TwoCertificatePalomar.two_certificate_supporting_plane",
+    "TwoCertificatePalomar.phi219_supporting_plane",
+    "TwoCertificatePalomar.exact_final_comparison"
+  ],
+  "definition_names": [],
+  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
+  "enable_nanoda": true
+}

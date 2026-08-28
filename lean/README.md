@@ -19,11 +19,20 @@ framework or the upstream interval certificates.
   tax, and the final strict bound `> 673316977 / 10^9`.
 - `Audit.lean` prints the axiom dependencies of the load-bearing theorems.
 
-The formal proof reveals a simplification: the span comparison and the two
-extra slope hypotheses in the manuscript's supporting-plane lemma are
-unnecessary for that conclusion.  The Lean theorem is therefore stronger
-than the stated lemma, while yielding exactly the same coefficients and
-final constant.
+For Palomar, `Challenge.lean` restates three auditable conclusions using only
+ordinary Mathlib imports, while `Solution.lean` proves the same declarations
+from the substantive modules above.  `comparator.json` selects those three
+declarations, and `formalization.yaml` records the precise scope, provenance,
+automation, and known limitations.  This is a nested Lean project in the
+larger research repository; the repository-root MIT licence covers the fixed
+snapshot.
+
+The formal proof isolates a scalar simplification: once the explicit
+trace-envelope alternative is supplied, the span comparison and the two extra
+slope hypotheses in the manuscript's supporting-plane lemma are unnecessary
+for that scalar conclusion.  The spectral derivation of the trace-envelope
+alternative is not formalized here.  The coefficients and final constant are
+unchanged.
 
 ## Explicit trust boundary
 
@@ -51,6 +60,10 @@ lake build
 lake env lean Audit.lean
 ```
 
-The build contains no `sorry`, `admit`, or user-declared axiom.  The audit
-prints only Lean/Mathlib's standard logical axioms (`propext`,
-`Classical.choice`, and `Quot.sound`) and does not contain `sorryAx`.
+The substantive modules and `Solution.lean` contain no `sorry`, `admit`, or
+user-declared axiom.  `Challenge.lean` contains exactly three deliberate
+statement holes, as required for the Comparator statement/solution split;
+they are not imported by `Solution.lean`.  The audit prints only
+Lean/Mathlib's standard logical axioms (`propext`, `Classical.choice`, and
+`Quot.sound`) for both the underlying and wrapper theorems and does not
+contain `sorryAx`.

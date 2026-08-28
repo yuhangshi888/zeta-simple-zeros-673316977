@@ -1,0 +1,164 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "A Lean verification of the two-certificate supporting-plane deduction at block length 219"
+  description: >-
+    A Lean 4 and Mathlib formalization of the supporting-plane and
+    exact-arithmetic portion of the finite-dimensional argument in Yuhang
+    Shi's research draft on simple zeros of the Riemann zeta function. It
+    proves a conditional scalar two-certificate supporting-plane implication,
+    its explicit piecewise-square-root specialization at block length 219,
+    and the exact strict comparison above 673316977/10^9 for the resulting
+    local assembly expression. The spectral derivation of the trace-envelope
+    alternative, the upstream seven- and nine-point interval certificates,
+    and the analytic passage from finite blocks to a global zeta-zero
+    proportion are not formalized here and are not claimed as
+    Palomar-verified conclusions.
+  authors:
+    - "Yuhang Shi"
+  license: "MIT"
+  responsible_maintainers:
+    - "Yuhang Shi"
+
+classification:
+  arxiv: ["math.NT"]
+  msc2020: ["11M26"]
+
+sources:
+  - title: "A two-certificate trace-energy deduction for simple zeros of the Riemann zeta function"
+    authors:
+      - "Yuhang Shi"
+    id: "doi:10.5281/zenodo.21926962"
+    type: "paper"
+    location: >-
+      Lemma 2.2, Section 3, and the exact comparison in Theorem 1.1;
+      https://doi.org/10.5281/zenodo.21926962
+    relationship: "formalizes"
+    note: >-
+      The Lean development formalizes the new local supporting-plane and
+      exact-arithmetic layer of the research draft. It does not formalize the
+      imported analytic interface or the upstream interval certificates.
+    license: "CC-BY-4.0"
+    author_endorsement: "participated"
+  - title: "A 67.3312742272% lower-bound candidate for simple zeros of zeta"
+    id: "https://github.com/trmdy/zeta-simple-zeros-673137/tree/1610b97b7895ff34982260f8dcaf04a0f7b82cf7"
+    type: "other"
+    location: >-
+      Repository snapshot at commit
+      1610b97b7895ff34982260f8dcaf04a0f7b82cf7
+    relationship: "background"
+    note: >-
+      This snapshot supplies the seven- and nine-point certificates used as
+      explicit hypotheses in the research draft. Its large interval searches
+      are not replayed or formalized in this Lean project.
+    author_endorsement: "not-contacted"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    The substantive Lean modules and Solution.lean contain no sorry, admit,
+    custom axiom, native_decide, or Lean.ofReduceBool. The compared statements
+    cover the abstract supporting-plane theorem, the concrete Phi_219
+    specialization with all certificate and trace-envelope assumptions shown,
+    and the exact final comparison. Challenge.lean contains three deliberate
+    statement holes permitted by Comparator; they are not proof dependencies
+    and are excluded from the counts below. No end-to-end formalization of a
+    lower bound for zeta zeros is claimed.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "TwoCertificatePalomar.two_certificate_supporting_plane"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "TwoCertificatePalomar.phi219_supporting_plane"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "TwoCertificatePalomar.exact_final_comparison"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Quot.sound", "Classical.choice"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["OpenAI Codex (model identifier not exposed)"]
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Agent-assisted translation of the author's mathematical argument into
+        Lean, proof decomposition, compilation, and adversarial checking, with
+        the author selecting the statements, reviewing the mathematical scope
+        and trust boundary, and taking responsibility for the submitted
+        snapshot.
+      cost:
+        wall_time: "not tracked"
+        spend_usd: "subscription-based"
+        hardware: "local Mac for Lean builds; hosted service for model inference"
+  spend_usd: "subscription-based"
+  notes: >-
+    Yuhang Shi supplied and directed the mathematical argument and is
+    responsible for the claims. OpenAI Codex assisted with the Lean
+    formalization and repository preparation.
+
+fidelity:
+  divergences: >-
+    The abstract Lean theorem isolates a conditional scalar implication from
+    Lemma 2.2 of the manuscript and assumes the trace-envelope alternative
+    R <= D or phi(E) <= D. Within that isolated implication, the
+    span-comparison hypothesis and two auxiliary slope hypotheses are not
+    needed. The spectral argument producing the trace-envelope alternative is
+    outside the formalized scope. The concrete theorem retains the certificate
+    inequalities and that alternative as explicit assumptions. The Lean
+    development proves the local expression exceeds 673316977/10^9, but it
+    does not prove that the imported analytic and computational inputs hold or
+    formalize the deduction of the global zeta-zero proportion from those
+    inputs.
+
+review:
+  status: "self-assessed"
+  reviewers:
+    - "Yuhang Shi"
+  notes: >-
+    The author and OpenAI Codex checked the compared statements against the
+    research draft, built the pinned Lean project, and audited the axiom and
+    proof boundary. No external mathematical peer review is claimed.
+
+alignment:
+  namespace: "TwoCertificatePalomar"
+  statements:
+    - source: "Conditional scalar implication isolated from Lemma 2.2"
+      lean: "TwoCertificatePalomar.two_certificate_supporting_plane"
+      module: "Solution"
+      status: "proved conditional scalar implication"
+      note: >-
+        The trace-envelope alternative is an explicit theorem hypothesis.
+        Once it is supplied, the scalar deduction does not use the manuscript's
+        span-comparison or auxiliary slope assumptions.
+    - source: "Section 3, block length 219"
+      lean: "TwoCertificatePalomar.phi219_supporting_plane"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        The constants, piecewise Phi_219 function, two certificate inequalities,
+        and trace-envelope alternative are all explicit in the theorem type.
+    - source: "Theorem 1.1, exact local comparison"
+      lean: "TwoCertificatePalomar.exact_final_comparison"
+      module: "Solution"
+      status: "proved"
+      note: >-
+        This is the exact rational and radical comparison for the local
+        assembly expression, not an end-to-end theorem about zeta zeros.
+
+acknowledgements: >-
+  The development uses Lean 4 and Mathlib. The Palomar project supplied the
+  Comparator-based statement and proof verification standard.

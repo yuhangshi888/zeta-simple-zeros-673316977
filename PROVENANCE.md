@@ -18,10 +18,11 @@ interval run is used in this deduction.
 
 The repository now includes a no-`sorry` Lean 4 formalization of the new
 supporting-plane and exact-arithmetic layer.  The upstream certificates and
-analytic interface remain explicit imported hypotheses.  The formal proof
-also shows that the span comparison and auxiliary slope conditions are
-unnecessary for the supporting-plane conclusion; this strengthens the local
-lemma without changing the coefficients or final value.
+analytic interface remain explicit imported hypotheses.  Once the
+trace-envelope alternative is supplied as a hypothesis, the formalized
+conditional scalar step does not use the span comparison or auxiliary slope
+conditions.  The spectral derivation of that alternative is not formalized
+here; the coefficients and final value are unchanged.
 
 The immutable `v0.1.0` release is permanently archived at
 [Zenodo](https://doi.org/10.5281/zenodo.21926962), version DOI
